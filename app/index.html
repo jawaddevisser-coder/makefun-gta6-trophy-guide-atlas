@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Atlas — GTA 6 Trophy Guide</title>
+<link rel="stylesheet" href="css/atlas.css">
+<script type="module" src="js/atlas.js"></script>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="top-inner">
+    <div>
+      <p class="eyebrow">GRAND THEFT AUTO VI · PLAYSTATION 5 · OFFLINE GUIDE</p>
+      <h1>VICE CITY <span>ATLAS</span></h1>
+      <p class="subtitle">All 55 trophies, mapped across Leonida. Pick a district, follow the route, tick them off.</p>
+    </div>
+    <div class="progress-box" id="progressBox">
+      <div class="progress-line"><strong id="earnedLine">0 / 55 earned</strong><span id="gradeCounts"></span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-actions">
+        <button id="exportBtn" type="button">Export progress</button>
+        <label class="import-label">Import progress<input type="file" id="importFile" accept="application/json,.json" hidden></label>
+        <label class="spoiler-label"><input type="checkbox" id="spoilerToggle"> Spoiler-free</label>
+      </div>
+      <p class="missable-note" id="missableNote">⚠ 1 possibly missable: Positive Mental Attitude — meditate in Chapter 1 before it ends.</p>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs" aria-label="Views">
+    <button type="button" data-view="atlas" class="active">Atlas</button>
+    <button type="button" data-view="checklist">Checklist</button>
+    <button type="button" data-view="planner">Planner</button>
+    <button type="button" data-view="roadmap">Roadmap</button>
+  </nav>
+</header>
+<main id="main">
+  <section id="view-atlas" class="view">
+    <div class="atlas-head">
+      <div id="map" class="map" role="img" aria-label="Stylised map of Leonida"></div>
+      <div class="statewide-card" id="statewideCard"></div>
+    </div>
+    <p class="map-note">Stylised map — regions are drawn for navigation, not to scale, and no game artwork is used. Tap a district to jump to its trophies.</p>
+    <div id="districtSections"></div>
+  </section>
+  <section id="view-checklist" class="view" hidden>
+    <div class="toolbar" id="toolbar">
+      <input id="searchInput" type="search" placeholder="Search trophies, guides…" aria-label="Search trophies">
+      <select id="kindFilter" aria-label="Filter by kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="crime">Crime &amp; heists</option>
+        <option value="side">Side quests</option>
+        <option value="misc">Misc</option>
+        <option value="completion">Completion</option>
+        <option value="platinum">Platinum</option>
+        <option value="online">Online</option>
+      </select>
+      <select id="gradeFilter" aria-label="Filter by grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+      <select id="districtFilter" aria-label="Filter by district">
+        <option value="all">All districts</option>
+      </select>
+      <label class="hide-earned"><input type="checkbox" id="hideEarned"> Hide earned</label>
+    </div>
+    <p id="listMeta" class="list-meta"></p>
+    <div id="trophyList" class="trophy-list"></div>
+  </section>
+  <section id="view-planner" class="view" hidden>
+    <div class="planner-grid">
+      <div>
+        <h2>Add districts to your route</h2>
+        <p class="planner-hint">Build your own route through Leonida in the order you want to play it. Your route is saved in this browser.</p>
+        <div id="districtPicker" class="district-picker"></div>
+        <div class="planner-actions">
+          <button id="suggestedRoute" type="button">Suggested route</button>
+          <button id="clearRoute" type="button">Clear route</button>
+        </div>
+      </div>
+      <div>
+        <h2>Your route</h2>
+        <ol id="routeList" class="route-list"></ol>
+        <p id="routeSummary" class="route-summary"></p>
+      </div>
+    </div>
+  </section>
+  <section id="view-roadmap" class="view" hidden>
+    <div id="roadmapFacts" class="roadmap-facts"></div>
+    <div id="roadmapStages" class="roadmap-stages"></div>
+  </section>
+</main>
+<aside id="detail" class="detail" hidden>
+  <button id="detailClose" type="button" aria-label="Close guide">×</button>
+  <div id="detailBody"></div>
+</aside>
+<p id="toast" class="toast" hidden></p>
+<footer class="foot">
+  <p>Vice City Atlas — an unofficial, fan-made guide. Grand Theft Auto VI and GTA are trademarks of Take-Two Interactive; this guide is not affiliated with or endorsed by Rockstar Games. Trophy names and descriptions are shown as PlayStation publishes them. Guides are original and cite their sources: PowerPyx, KeenGamer, Push Square and GameMapa. Works offline — nothing leaves your browser.</p>
+</footer>
+</body>
+</html>
